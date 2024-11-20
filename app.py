@@ -7,6 +7,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route('/')
+@app.route('/home')
 def index():
     return render_template("index.html")
 

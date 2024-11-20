@@ -77,6 +77,10 @@ body {
   height: auto;
 }
 
+.textchunk {
+  transition: transform 0.8s;
+}
+
 .text {
   height: auto;
   position: relative;
@@ -84,7 +88,7 @@ body {
   justify-content: center;
   align-items: bottom;
   animation: fade-in-text 1s 0.3s backwards;
-  transition: transform 0.8s;
+  /* transition: transform 0.8s; */
   /* overflow: scroll; */
 }
 .text2 {
@@ -94,7 +98,7 @@ body {
   justify-content: center;
   align-items: bottom;
   animation: fade-in-text 1s 0.5s backwards;
-  transition: transform 0.8s;
+  /* transition: transform 0.8s; */
   /* overflow: scroll; */
 }
 .text3 {
@@ -104,7 +108,7 @@ body {
   justify-content: center;
   align-items: bottom;
   animation: fade-in-text 1s 0.7s backwards;
-  transition: transform 0.8s;
+  /* transition: transform 0.8s; */
   /* overflow: scroll; */
 }
 .image {
@@ -116,16 +120,12 @@ body {
   animation: fade-in-image 1s 0.3s backwards;
   transition: all 0.8s;
 }
+
+.textchunk:hover {
+  transform: scale(1.05);
+}
+
 .image:hover {
-  transform: scale(1.05);
-}
-.text:hover {
-  transform: scale(1.05);
-}
-.text2:hover {
-  transform: scale(1.05);
-}
-.text3:hover {
   transform: scale(1.05);
 }
 

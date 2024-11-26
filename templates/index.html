@@ -1,46 +1,6 @@
-{% extends 'base.html' %} {% block head %}
+{% extends 'layout.html' %} {% block head %}
 <title>GenAI Data Science Project</title>
-{% endblock head%} {% block body %}
-
-<!-- --------------------------------NavBar----------------------------------- -->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-body-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#"
-      ><img
-        class="logo"
-        src="{{ url_for('static', filename = 'Images/logo-w.png')}}"
-        width="70px"
-        height="70px"
-      />AI Analytics</a
-    >
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+{% endblock head %} {% block body %}
 <!-- ----------------------------------Text-Left--------------------------------- -->
 <div class="container main">
   <div class="align-items-center row">
@@ -73,10 +33,16 @@
       </div>
     </div>
     <!-- ----------------------------------Input-Bottom--------------------------------- -->
-    <div class="footer">
+    <!-- <div class="footer">
       <br /><br />
       <label class="input form-label" for="customFile">Upload Dataset</label>
       <input type="file" class="input form-control" id="customFile" />
+    </div> -->
+    <br /><br />
+    <div class="footer step">
+      <button type="button" class="btn electric-btn btn-dark">
+        <a class="nav-link" href="{{url_for('login')}}">Step into the Future</a>
+      </button>
     </div>
   </div>
 </div>

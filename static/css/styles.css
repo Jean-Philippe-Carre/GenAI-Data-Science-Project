@@ -28,6 +28,16 @@
     transform: translate();
   }
 }
+@keyframes fade-in-step {
+  0% {
+    opacity: 0;
+    transform: translateX(-75px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate();
+  }
+}
 @keyframes fade-in-image {
   0% {
     opacity: 0;
@@ -58,7 +68,27 @@
     transform: translate();
   }
 }
-
+@keyframes glow-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes fade-in-login {
+  0% {
+    opacity: 0;
+    transform: translatey(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate();
+  }
+}
 body {
   font-family: "Neuropol", sans-serif;
   background-color: black;
@@ -111,6 +141,11 @@ body {
   /* transition: transform 0.8s; */
   /* overflow: scroll; */
 }
+.footer {
+  animation: fade-in-step 1s 0.9s backwards;
+  transition: all 0.8s;
+  width: 275px;
+}
 .image {
   height: auto;
   position: relative;
@@ -129,6 +164,10 @@ body {
   transform: scale(1.05);
 }
 
+.footer:hover {
+  transform: scale(1.05);
+}
+
 .navbar {
   animation: fade-in-navbar 1s;
 }
@@ -140,4 +179,77 @@ body {
 
 .input:hover {
   transform: scale(1.05);
+}
+.electric-btn {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, blue, red);
+  background-size: 200% 200%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: glow-gradient 3s infinite linear;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.electric-btn:hover {
+  transform: scale(1.05);
+}
+
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #fccb90;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    #ee7724,
+    #d8363a,
+    #dd3675,
+    #b44593
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+  .gradient-form {
+    height: 100vh !important;
+  }
+}
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
+}
+.twincard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login {
+  animation: fade-in-login 1s;
+}
+
+.cardheight {
+  height: 50px;
+}
+
+.textsize {
+  font-size: small;
+}
+
+.form-control {
+  width: 300px;
+  height: 25px;
+}
+
+.accountbutton {
+  width: 250px;
 }

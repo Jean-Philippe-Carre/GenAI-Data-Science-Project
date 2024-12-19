@@ -89,6 +89,16 @@
     transform: translate();
   }
 }
+@keyframes fade-in-iframe {
+  0% {
+    opacity: 0;
+    transform: translatey(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate();
+  }
+}
 body {
   font-family: "Neuropol", sans-serif;
   background-color: black;
@@ -153,6 +163,11 @@ body {
   /* justify-content: center; */
   align-items: top;
   animation: fade-in-image 1s 0.3s backwards;
+  transition: all 0.8s;
+}
+
+#iframe {
+  animation: fade-in-iframe 1s 0.3s backwards;
   transition: all 0.8s;
 }
 

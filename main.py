@@ -5,7 +5,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, EmailField
 from wtforms.validators import DataRequired, Email, EqualTo
 import os
-# import psycopg2
+
 
 app = Flask(__name__)
 
@@ -18,6 +18,8 @@ db = SQLAlchemy(app)
 
 UPLOAD_FOLDER = 'Images/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+IFRAME_URL = os.getenv('IFRAME_URL')
 
 
 class Users(db.Model):
@@ -114,7 +116,7 @@ def login():
 def eda():
     if not session.get('logged_in'):
         return redirect(url_for('login'))
-    return render_template('eda.html')
+    return render_template('eda.html', iframe_url=IFRAME_URL)
 
 
 @app.route('/logout')

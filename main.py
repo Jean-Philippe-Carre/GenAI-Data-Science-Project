@@ -71,7 +71,11 @@ def register():
         db.session.add(new_user)
         db.session.commit()
 
-        return render_template("eda.html")
+        session['logged_in'] = True
+        session['user_id'] = new_user.user_id
+        session['username'] = new_user.username
+
+        return redirect(url_for("eda"))
 
     # Render the form with validation errors (if any)
     return render_template("register.html", form=form)
